@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": "1212121",
+            "first_name": "Greg",
+            "last_name": "Harrison"
+        },
+        {
+            "id": "1212122",
+            "first_name": "Test",
+            "last_name": "Harrington"
+        },
+        {
+            "id": "1212123",
+            "first_name": "Frank",
+            "last_name": "Costanza"
+        },
+        {
+            "id": "1212124",
+            "first_name": "Arnold",
+            "last_name": "Palmer"
+        }
+    ]
+}
