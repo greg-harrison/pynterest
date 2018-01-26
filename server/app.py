@@ -1,16 +1,14 @@
-from flask import Flask, request, jsonify
+from flask_api import FlaskAPI, status
+import json
 
-app = Flask(__name__)
+app = FlaskAPI(__name__)
 
-test = {
-    0: 'hello'
-}
+users = json.loads(open('mockdata.json').read())
 
 @app.route('/')
 def index():
-    response = jsonify(test)
-    response.status_code = 200
-    return response
+    return users, status.HTTP_200_OK
+
 
 if __name__ == '__main__':
     app.run()
