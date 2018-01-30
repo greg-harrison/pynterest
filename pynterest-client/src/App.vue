@@ -10,12 +10,19 @@ import axios from "axios";
 
 export default {
   name: "app",
-  data() {
-    return {
-      restData: axios.get("http://localhost:5000").then(function(res) {
-        return res;
-      })
-    };
+  data: () => ({
+    restData: []
+  }),
+  methods: {
+    fetchData() {
+      var vm = this;
+      axios.get("http://localhost:5000").then(function(res) {
+        vm.restData = JSON.stringify(res.data.users);
+      });
+    }
+  },
+  created() {
+    this.fetchData();
   }
 };
 </script>
