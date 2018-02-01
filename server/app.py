@@ -1,9 +1,12 @@
 from flask_api import FlaskAPI, status
 from flask_httpauth import HTTPBasicAuth
+from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-import json
+import json, os
 
 app = FlaskAPI(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['PYN_PG_CONNECTION_URI']
+db = SQLAlchemy(app)
 CORS(app)
 auth = HTTPBasicAuth()
 
