@@ -1,0 +1,6 @@
+# Basically the same as a Package.json in node
+# install command => pip3 install -r requirements.txt
+flask_api
+flask_httpauth
+flask_sqlalchemy
+flask_cors
