@@ -2,6 +2,7 @@ from flask_api import FlaskAPI, status
 from flask_httpauth import HTTPBasicAuth
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+import test
 import json, os
 
 app = FlaskAPI(__name__)
@@ -50,6 +51,7 @@ def verify(username, password):
 
 @app.route('/')
 def index():
+    test.test_func()
     return users, status.HTTP_200_OK
 
 
