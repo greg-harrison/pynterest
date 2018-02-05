@@ -58,12 +58,12 @@ def index():
 def secretIndex():
     return secretData, status.HTTP_200_OK
 
-# @app.route('/pynterest/api/'+version+'/pyns', methods=['GET'])
-# @auth.login_required
-# def get_pyns():
-#     return pyns, status.HTTP_200_OK 
+@app.route('/pynterest/api/'+version+'/pyns', methods=['GET'])
+@auth.login_required
+def get_pyns():
+    return pyns, status.HTTP_200_OK 
 
-@app.route('/pynterest/api/'+version+'/pyns/<str:pyn_id>', methods=['GET'])
+@app.route('/pynterest/api/'+version+'/pyns/<pyn_id>', methods=['GET'])
 @auth.login_required
 def get_pyns(pyn_id):
     if pyn_id:
