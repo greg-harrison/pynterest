@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from queries.pyns import get_all_pyns as get_all_pyns_query 
 from queries.pyns import get_pyn_by_id as get_pyn_by_id_query 
+from queries.pyns import get_pyns_by_user_id as get_pyns_by_user_id_query 
 import json, os
 
 app = FlaskAPI(__name__)
@@ -46,6 +47,11 @@ def get_all_pyns():
 @auth.login_required
 def get_pyns(pyn_id):
     return get_pyn_by_id_query(id)
+
+@app.route('/pynterest/api/'+version+'/pyns/user/<user_id>', methods=['GET'])
+@auth.login_required
+def get_user_pyns(user_id):
+    return get_pyns_by_user_id_query(id)
 
 if __name__ == '__main__':
     app.run()
