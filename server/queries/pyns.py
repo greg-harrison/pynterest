@@ -20,7 +20,11 @@ def get_pyn_by_id(pyn_id):
 
 def get_pyns_by_user_id(user_id):
     if user_id:
-        pyn = [pyn for pyn in pyns if pyn['pyn_id'] == pyn_id]
+        for x in pyns:
+            if x.user_id == user_id:
+                pyn = x
+                break
+        # pyn = [pyn for pyn in pyns if pyn['user_id'] == user_id]
         if len(pyn) == 0:
             return status.HTTP_404_NOT_FOUND
         return pyn[0], status.HTTP_200_OK 
