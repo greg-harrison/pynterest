@@ -41,17 +41,17 @@ def secretIndex():
 @app.route('/pynterest/api/'+version+'/pyns', methods=['GET'])
 @auth.login_required
 def get_all_pyns():
-    return get_all_pyns_query()
+    return get_all_pyns_query('test')
 
 @app.route('/pynterest/api/'+version+'/pyns/<pyn_id>', methods=['GET'])
 @auth.login_required
 def get_pyns(pyn_id):
-    return get_pyn_by_id_query(id)
+    return get_pyn_by_id_query(pyn_id)
 
 @app.route('/pynterest/api/'+version+'/pyns/user/<user_id>', methods=['GET'])
 @auth.login_required
 def get_user_pyns(user_id):
-    return get_pyns_by_user_id_query(id)
+    return get_pyns_by_user_id_query(user_id)
 
 if __name__ == '__main__':
     app.run()
