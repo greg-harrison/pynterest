@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <header/>
+    <Header/>
     {{ restData }}
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import header from "./components/base_components/header";
+import Header from "./components/base_components/header";
 
 export default {
   name: "app",
@@ -22,11 +22,8 @@ export default {
       });
     }
   },
-  created() {
-    this.fetchData();
-  },
   components: {
-    header: header
+    Header
   }
 };
 </script>

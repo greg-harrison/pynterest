@@ -1,12 +1,16 @@
 <template>
   <div>
-    Test
+    {{title}}
   </div>
 </template>
 
 <script>
 export default {
-  name: "header"
+  data() {
+    return {
+      title: "Hello World"
+    };
+  }
 };
 </script>
 
