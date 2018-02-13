@@ -1,29 +1,20 @@
 <template>
   <div id="app">
     <Header/>
-    {{ restData }}
+    <PynContainer/>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import Header from "./components/base_components/header";
+import PynContainer from "./components/base_components/pyn-container";
 
 export default {
   name: "app",
-  data: () => ({
-    restData: []
-  }),
-  methods: {
-    fetchData() {
-      var vm = this;
-      axios.get("http://localhost:5000").then(function(res) {
-        vm.restData = JSON.stringify(res.data.users);
-      });
-    }
-  },
   components: {
-    Header
+    Header,
+    PynContainer
   }
 };
 </script>
@@ -35,7 +26,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 h1,
