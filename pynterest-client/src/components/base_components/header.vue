@@ -3,6 +3,11 @@
     <div class="header-container_title">
     {{title}}
     </div>
+    <div class="header-container-panel_right">
+      <!-- If is logged in show USERNAME and a link to the PROFILE -->
+      <!-- else - Show the LOGIN button -->
+      <a href="">Login</a>
+    </div>
   </div>
 </template>
 
@@ -31,6 +36,10 @@ export default {
   .header-container_title {
     padding-left: 1rem;
     float: left;
+  }
+  .header-container-panel_right {
+    text-align: right;
+    margin-right: 1rem;
   }
 }
 </style>
