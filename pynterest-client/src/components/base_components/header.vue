@@ -6,7 +6,8 @@
     <div class="header-container-panel_right">
       <!-- If is logged in show USERNAME and a link to the PROFILE -->
       <!-- else - Show the LOGIN button -->
-      <a href="">Login</a>
+      <a v-if="!user.registered" href="">Login</a>
+      <span v-if="user.registered" v-bind="user.name"></span>
     </div>
   </div>
 </template>
@@ -15,7 +16,12 @@
 export default {
   data() {
     return {
-      title: "PY"
+      title: "Pynterest",
+      user: {
+        name: 'test',
+        email: 'test@test.com',
+        registered: true
+      }
     };
   }
 };
