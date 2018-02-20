@@ -7,7 +7,9 @@
       <!-- If is logged in show USERNAME and a link to the PROFILE -->
       <!-- else - Show the LOGIN button -->
       <a v-if="!user.registered" href="">Login</a>
-      <span v-if="user.registered" v-bind="user.name"></span>
+      <a v-if="user.registered" href="">
+        {{user.name}}
+      </a>
     </div>
   </div>
 </template>
@@ -18,8 +20,8 @@ export default {
     return {
       title: "Pynterest",
       user: {
-        name: 'test',
-        email: 'test@test.com',
+        name: "test",
+        email: "test@test.com",
         registered: true
       }
     };
