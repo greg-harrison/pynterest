@@ -1,14 +1,16 @@
 <template>
   <div class="header-container">
     <div class="header-container_title">
-    {{title}}
+      {{title}}
     </div>
     <div class="header-container-panel_right">
-      <!-- If is logged in show USERNAME and a link to the PROFILE -->
-      <!-- else - Show the LOGIN button -->
       <a v-if="!user.registered" href="">Login</a>
       <a v-if="user.registered" href="">
-        {{user.name}}
+        Hello, {{user.name}}
+      </a>
+      /
+      <a v-if="user.registered" href="">
+        Logout
       </a>
     </div>
   </div>
