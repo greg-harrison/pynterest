@@ -1,21 +1,21 @@
 <template>
   <div id="app">
-    <Header/>
-    <PynContainer/>
+    <router-view name="Header"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import Header from "./components/base_components/header";
-import PynContainer from "./components/base_components/pyn-container";
+// import Header from "./components/base_components/header";
+// import PynContainer from "./components/base_components/pyn-container";
 
 export default {
-  name: "app",
-  components: {
-    Header,
-    PynContainer
-  }
+  name: "app"
+  // components: {
+  //   Header,
+  //   PynContainer
+  // }
 };
 </script>
 
